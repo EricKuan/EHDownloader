@@ -15,7 +15,7 @@ public class getEHPhoto {
 	
 	public static void main(String[] args) throws Exception {
 
-		Executor executor = Executors.newFixedThreadPool(10);
+		Executor executor = Executors.newFixedThreadPool(5);
 
 		FileInputStream fileInStreamObj = new FileInputStream("./conf/downliadList.txt");
 		InputStream inStreamObject = fileInStreamObj;
