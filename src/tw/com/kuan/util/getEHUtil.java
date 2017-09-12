@@ -37,7 +37,7 @@ public  class getEHUtil {
 
 
 	public void getPhotoJsoup(String target, String Path) throws IOException {
-		Connection conn = getConnection(target).timeout(5000);
+		Connection conn = getConnection(target).timeout(10000);
 		Document doc = conn.get();
 		Elements elem = doc.select("#i3");
 		for (Element obj : elem) {
