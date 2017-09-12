@@ -55,7 +55,7 @@ class getEHThread implements Runnable {
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
-				return;
+				throw e;
 			}
 		}
 		System.out.println(title + " Download End!");
@@ -67,7 +67,8 @@ class getEHThread implements Runnable {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			getEHPhoto.minusThreadCount();
 		}
-		getEHPhoto.minusThreadCount();
 	}
 }
