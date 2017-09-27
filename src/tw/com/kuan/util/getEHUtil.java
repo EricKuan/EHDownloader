@@ -87,7 +87,7 @@ public  class getEHUtil {
 			URL url = new URL(sURL);
 			HttpURLConnection URLConn = null;
 			URLConn = (HttpURLConnection) url.openConnection();
-			// ­n¨Dªº¼ĞÀYheader
+			// è¦æ±‚çš„æ¨™é ­header
 			URLConn.setRequestProperty("User-agent", "Mozilla/5.0 (Windows; U; Windows NT 6.0; zh-TW; rv:1.9.1.2) "
 					+ "Gecko/20090729 Firefox/3.5.2 GTB5 (.NET CLR 3.5.30729)");
 			URLConn.setRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
@@ -95,11 +95,11 @@ public  class getEHUtil {
 			URLConn.setRequestProperty("Accept-Charse", "Big5,utf-8;q=0.7,*;q=0.7");
 			// URLConn.setDoInput(true);
 			// URLConn.setDoOutput(true);
-			// «Ø¥ß³s½u
+			// å»ºç«‹é€£ç·š
 			URLConn.connect();
 			// URLConn.getOutputStream().flush();
 
-			// ¨ú±o¤U¸üinputstream³s½u
+			// å–å¾—ä¸‹è¼‰inputstreamé€£ç·š
 			java.io.BufferedInputStream rd = new java.io.BufferedInputStream(URLConn.getInputStream());
 
 //			String saveFileName = fileName;
@@ -113,14 +113,14 @@ public  class getEHUtil {
 				return true;
 			}
 //			fileName = saveFileName;
-			// ¨ú±o¸ô®|
+			// å–å¾—è·¯å¾‘
 			// this.filePath = f.getAbsolutePath();
 
 			java.io.BufferedOutputStream fos = new java.io.BufferedOutputStream(new java.io.FileOutputStream(f));
 
 			byte[] tmp = new byte[1024];
 			int len;
-			// Åª¨úhttpConectionªºinput,¼g¥XÀÉ®×ªºoutput
+			// è®€å–httpConectionçš„input,å¯«å‡ºæª”æ¡ˆçš„output
 			while ((len = rd.read(tmp)) != -1) {
 				// System.out.print(tmp);
 				fos.write(tmp, 0, len);
