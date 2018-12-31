@@ -16,7 +16,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public  class getEHUtil {
-	public static String[] REPLACECHAR = { "~", "*", "#", "%", "&", ":", ">", "<", "/", "}", "{", "|" };
+	public static String[] REPLACECHAR = { "~", "\\*", "\\#", "\\%", "\\&", ":", ">", "<", "/", "\\}", "\\{", "\\|" };
 
 	public static Properties p = new Properties();
 	public static int fileCount = 0;
@@ -75,7 +75,12 @@ public  class getEHUtil {
 		System.out.println(doc.select("#gj").text());
 		if (title.length() < 1) {
 			title = doc.select("#gn").text();
+			
 		}
+		for(String str:REPLACECHAR) {
+			title = title.replaceAll(str, " ");
+		}
+		System.out.println(title);
 		return title;
 	}
 
@@ -93,6 +98,7 @@ public  class getEHUtil {
 			URLConn.setRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
 			URLConn.setRequestProperty("Accept-Language", "zh-tw,en-us;q=0.7,en;q=0.3");
 			URLConn.setRequestProperty("Accept-Charse", "Big5,utf-8;q=0.7,*;q=0.7");
+			URLConn.setConnectTimeout(60000);
 			// URLConn.setDoInput(true);
 			// URLConn.setDoOutput(true);
 			// 建立連線

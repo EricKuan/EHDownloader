@@ -5,35 +5,44 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
-import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.stream.Collectors;
 
 public class getEHPhoto {
 	private static int threadcount = 0;
 	
 	public static void main(String[] args) throws Exception {
 
-		Executor executor = Executors.newFixedThreadPool(5);
-
+		ExecutorService executor  = Executors.newFixedThreadPool(5);
 		FileInputStream fileInStreamObj = new FileInputStream("./conf/downliadList.txt");
 		InputStream inStreamObject = fileInStreamObj;
 		Scanner sc = new Scanner(inStreamObject);
+		ArrayList<Future> result = new ArrayList<>();
 		while (sc.hasNext()) {
 			String url = sc.nextLine();
 			getEHThread get = new getEHThread(url); 
-			executor.execute(get);
-			threadcount++;
+			result.add(executor.submit(get));
 			Thread.sleep(5000L);
 		}
 		sc.close();
 		inStreamObject.close();
 		fileInStreamObj.close();
-		while(threadcount>0){
-			System.out.println(threadcount + " thread Still Running!");
-			Thread.sleep(10000L);
-		}
+		ArrayList<Future> jobs = null;
+		do {
+			jobs = (ArrayList<Future>) result.stream().filter(single -> single.isDone()).collect(Collectors.toList());
+			System.out.println("==========\nTotal job: " + result.size());
+			System.out.println("Finsh job: " + jobs.size() + "\n==========");
+			Thread.sleep(5000L);
+		}while(result.size() > jobs.size());
+		
+				
+				
+		
 		System.out.println("Mission Completed");
 		executor = null;
 		delCompleteFile();

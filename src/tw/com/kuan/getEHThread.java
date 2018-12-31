@@ -67,8 +67,6 @@ class getEHThread implements Runnable {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
-			getEHPhoto.minusThreadCount();
 		}
 	}
 }
