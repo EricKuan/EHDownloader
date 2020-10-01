@@ -1,5 +1,8 @@
 package tw.com.kuan;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,11 +16,16 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
+@SpringBootApplication
 public class getEHPhoto {
 	private static int threadcount = 0;
 	
 	public static void main(String[] args) throws Exception {
+		SpringApplication.run(getEHPhoto.class, args);
+		startClam();
+	}
 
+	private static void startClam() throws InterruptedException, IOException {
 		ExecutorService executor  = Executors.newFixedThreadPool(5);
 		FileInputStream fileInStreamObj = new FileInputStream("./conf/downliadList.txt");
 		InputStream inStreamObject = fileInStreamObj;
@@ -25,7 +33,7 @@ public class getEHPhoto {
 		ArrayList<Future> result = new ArrayList<>();
 		while (sc.hasNext()) {
 			String url = sc.nextLine();
-			getEHThread get = new getEHThread(url); 
+			getEHThread get = new getEHThread(url);
 			result.add(executor.submit(get));
 			Thread.sleep(5000L);
 		}
@@ -39,10 +47,8 @@ public class getEHPhoto {
 			System.out.println("Finsh job: " + jobs.size() + "\n==========");
 			Thread.sleep(5000L);
 		}while(result.size() > jobs.size());
-		
-				
-				
-		
+
+
 		System.out.println("Mission Completed");
 		executor = null;
 		delCompleteFile();

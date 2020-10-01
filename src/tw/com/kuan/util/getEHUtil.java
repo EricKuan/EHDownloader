@@ -16,7 +16,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public  class getEHUtil {
-	public static String[] REPLACECHAR = { "~", "\\*", "\\#", "\\%", "\\&", ":", ">", "<", "/", "\\}", "\\{", "\\|" };
+	public static String[] REPLACECHAR = { "~", "\\*", "\\#", "\\%", "\\&", ":", ">", "<", "/", "\\}", "\\{", "\\|", "\\?" };
 
 	public static Properties p = new Properties();
 	public static int fileCount = 0;
@@ -69,6 +69,7 @@ public  class getEHUtil {
 
 	public synchronized String getTitle(String target) throws IOException {
 		String title = null;
+		System.out.println(target);
 		Connection conn = getConnection(target);
 		Document doc = conn.get();
 		title = doc.select("#gj").text();
@@ -159,6 +160,12 @@ public  class getEHUtil {
 		if (user != null && pass != null && !"".equalsIgnoreCase(user) && !"".equalsIgnoreCase(pass)) {
 			conn.cookie("ipb_member_id", p.getProperty("USERNUMBER"));
 			conn.cookie("ipb_pass_hash", p.getProperty("PASSWD_HASH"));
+//			conn.cookie("igneous", "afe62975f");
+//			conn.cookie("sl", "dm_1");
+//			conn.cookie("s", "c54e14dd7");
+			conn.cookie("sk", p.getProperty("SK"));
+//			conn.cookie("lv", "1552487455-1552952712");
+//			conn.cookie("hath_perks", "m1.t1.t2.t3.p1-16313ecdd6");
 		}
 		return conn;
 	}

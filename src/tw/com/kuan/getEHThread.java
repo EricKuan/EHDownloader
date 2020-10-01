@@ -28,6 +28,7 @@ class getEHThread implements Runnable {
 		String title;
 		try {
 			title = http.getTitle(url);
+			title = title.replace("?","");
 		} catch (IOException e) {
 			System.out.println("Can't get Title, please check url again!");
 			return;
@@ -51,7 +52,11 @@ class getEHThread implements Runnable {
 				ArrayList<String> urlSet = http.getPhotoUrl(target);
 				for (String targetUrl : urlSet) {
 //					System.out.println(title + ", " + targetUrl);
+					try{
 					http.getPhotoJsoup(targetUrl, Path);
+					}catch(Exception e){
+						e.printStackTrace();
+					}
 				}
 			} catch (IOException e) {
 				e.printStackTrace();

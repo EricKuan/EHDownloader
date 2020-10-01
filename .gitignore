@@ -1,1 +1,6 @@
 /target/
+.setting
+.idea
+/out/
+/photo/
+*.iml
