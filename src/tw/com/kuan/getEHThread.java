@@ -30,7 +30,9 @@ class getEHThread implements Runnable {
 			title = http.getTitle(url);
 			title = title.replace("?","");
 		} catch (IOException e) {
+			e.printStackTrace();
 			System.out.println("Can't get Title, please check url again!");
+
 			return;
 		}
 		Path = "photo\\" + title;
