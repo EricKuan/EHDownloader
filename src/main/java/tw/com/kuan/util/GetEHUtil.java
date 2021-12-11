@@ -42,18 +42,13 @@ public  class GetEHUtil {
 		Connection conn = getConnection(target).timeout(10000);
 		Document doc = conn.get();
 		Elements elem = doc.select("#i3");
+
 		for (Element obj : elem) {
 			String jpgUrl = obj.childNode(0).childNode(0).attr("src");
-			String[] split = jpgUrl.split("/");
-			String name = null;
-			if ((split[(split.length - 1)].length() > 20) && (split[(split.length - 1)].indexOf("=") > -1)) {
-				split = jpgUrl.split("=");
-				name = split[(split.length - 1)];
-			} else {
-				name = split[(split.length - 1)];
-			}
+			String saveNum = target.split("-")[1];
+			StringBuilder saveNameBuilder = new StringBuilder().append(saveNum).append(".jpg");
 			// String name = formatAns + ".jpg";
-			savePhoto(jpgUrl, name, Path);
+			savePhoto(jpgUrl, saveNameBuilder.toString(), Path);
 		}
 	}
 
