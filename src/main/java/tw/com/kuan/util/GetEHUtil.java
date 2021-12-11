@@ -9,19 +9,21 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import lombok.extern.log4j.Log4j2;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public  class getEHUtil {
+@Log4j2
+public  class GetEHUtil {
 	public static String[] REPLACECHAR = { "~", "\\*", "\\#", "\\%", "\\&", ":", ">", "<", "/", "\\}", "\\{", "\\|", "\\?" };
 
 	public static Properties p = new Properties();
 	public static int fileCount = 0;
 
-	public getEHUtil() {
+	public GetEHUtil() {
 		FileInputStream input = null;
 		try {
 			input = new FileInputStream("./conf/config.properties");
@@ -105,7 +107,9 @@ public  class getEHUtil {
 			// 建立連線
 			URLConn.connect();
 			// URLConn.getOutputStream().flush();
-
+			log.debug("URL: {}", sURL );
+			log.debug("savePath: {}", path );
+			log.debug("fileName: {}", fileName);
 			// 取得下載inputstream連線
 			java.io.BufferedInputStream rd = new java.io.BufferedInputStream(URLConn.getInputStream());
 
