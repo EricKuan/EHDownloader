@@ -1,0 +1,59 @@
+2025-10-29 14:37:36,651 INFO  [main] tw.com.kuan.Application : Starting Application on EricKuan-PC with PID 8132 (D:\erickuan\git\EHDownloader\target\classes started by xlp00 in D:\erickuan\git\EHDownloader)
+2025-10-29 14:37:36,653 INFO  [main] tw.com.kuan.Application : No active profile set, falling back to default profiles: default
+2025-10-29 14:37:37,129 INFO  [main] tw.com.kuan.Application : Started Application in 0.786 seconds (JVM running for 1.089)
+2025-10-29 14:37:38,795 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : Path: photo\[七瀬瑞穂] 恋人は吸血鬼!  [中国翻訳]
+2025-10-29 14:37:39,704 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : maxPage: 6
+2025-10-29 14:37:39,709 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : targetList: ["https://exhentai.org/g/1733562/dec26aa06b/?p\u003d5","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d4","https://exhentai.org/g/1733562/dec26aa06b/","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d3","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d2","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d1"]
+2025-10-29 14:37:39,709 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=5
+2025-10-29 14:37:40,611 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=4
+2025-10-29 14:37:41,369 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/
+2025-10-29 14:37:42,235 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=3
+2025-10-29 14:37:43,111 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=2
+2025-10-29 14:37:43,996 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=1
+2025-10-29 14:37:44,879 INFO  [pool-1-thread-1] tw.com.kuan.runner.MainExecutor : Mission Completed
+2025-10-29 14:37:44,879 INFO  [main] tw.com.kuan.runner.MainExecutor : ./conf/downliadList.202510291437.txt
+2025-10-29 14:37:44,880 INFO  [main] tw.com.kuan.runner.MainExecutor : downloadList.txt reset Completed!
+2025-10-29 14:39:09,233 INFO  [main] tw.com.kuan.Application : Starting Application on EricKuan-PC with PID 12384 (D:\erickuan\git\EHDownloader\target\classes started by xlp00 in D:\erickuan\git\EHDownloader)
+2025-10-29 14:39:09,234 INFO  [main] tw.com.kuan.Application : No active profile set, falling back to default profiles: default
+2025-10-29 14:39:09,799 INFO  [main] tw.com.kuan.Application : Started Application in 0.895 seconds (JVM running for 1.12)
+2025-10-29 14:39:09,805 INFO  [main] tw.com.kuan.runner.MainExecutor : Mission Completed
+2025-10-29 14:39:09,806 INFO  [main] tw.com.kuan.runner.MainExecutor : ./conf/downliadList.202510291439.txt
+2025-10-29 14:39:09,807 INFO  [main] tw.com.kuan.runner.MainExecutor : downloadList.txt reset Completed!
+2025-10-29 14:39:29,423 INFO  [main] tw.com.kuan.Application : Starting Application on EricKuan-PC with PID 7308 (D:\erickuan\git\EHDownloader\target\classes started by xlp00 in D:\erickuan\git\EHDownloader)
+2025-10-29 14:39:29,425 INFO  [main] tw.com.kuan.Application : No active profile set, falling back to default profiles: default
+2025-10-29 14:39:29,912 INFO  [main] tw.com.kuan.Application : Started Application in 0.787 seconds (JVM running for 1.01)
+2025-10-29 14:39:30,945 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : Path: photo\[七瀬瑞穂] 恋人は吸血鬼!  [中国翻訳]
+2025-10-29 14:39:31,854 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : maxPage: 6
+2025-10-29 14:39:31,860 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : targetList: ["https://exhentai.org/g/1733562/dec26aa06b/?p\u003d5","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d4","https://exhentai.org/g/1733562/dec26aa06b/","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d3","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d2","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d1"]
+2025-10-29 14:39:31,860 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=5
+2025-10-29 14:39:32,749 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=4
+2025-10-29 14:39:33,614 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/
+2025-10-29 14:39:34,450 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=3
+2025-10-29 14:39:35,225 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=2
+2025-10-29 14:39:36,029 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=1
+2025-10-29 14:39:36,855 INFO  [pool-1-thread-1] tw.com.kuan.runner.MainExecutor : Mission Completed
+2025-10-29 14:39:36,855 INFO  [main] tw.com.kuan.runner.MainExecutor : ./conf/downliadList.202510291439.txt
+2025-10-29 14:39:36,856 INFO  [main] tw.com.kuan.runner.MainExecutor : downloadList.txt reset Completed!
+2025-10-29 14:40:14,231 INFO  [main] tw.com.kuan.Application : Starting Application on EricKuan-PC with PID 21280 (D:\erickuan\git\EHDownloader\target\classes started by xlp00 in D:\erickuan\git\EHDownloader)
+2025-10-29 14:40:14,233 INFO  [main] tw.com.kuan.Application : No active profile set, falling back to default profiles: default
+2025-10-29 14:40:14,747 INFO  [main] tw.com.kuan.Application : Started Application in 0.855 seconds (JVM running for 1.449)
+2025-10-29 14:40:16,017 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : Path: photo\[七瀬瑞穂] 恋人は吸血鬼!  [中国翻訳]
+2025-10-29 14:40:16,751 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : maxPage: 6
+2025-10-29 14:40:16,755 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : targetList: ["https://exhentai.org/g/1733562/dec26aa06b/?p\u003d5","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d4","https://exhentai.org/g/1733562/dec26aa06b/","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d3","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d2","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d1"]
+2025-10-29 14:40:16,756 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=5
+2025-10-29 14:41:22,050 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=4
+2025-10-29 14:41:29,619 INFO  [main] tw.com.kuan.Application : Starting Application on EricKuan-PC with PID 1880 (D:\erickuan\git\EHDownloader\target\classes started by xlp00 in D:\erickuan\git\EHDownloader)
+2025-10-29 14:41:29,621 INFO  [main] tw.com.kuan.Application : No active profile set, falling back to default profiles: default
+2025-10-29 14:41:30,220 INFO  [main] tw.com.kuan.Application : Started Application in 0.968 seconds (JVM running for 1.319)
+2025-10-29 14:41:31,350 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : Path: photo\[七瀬瑞穂] 恋人は吸血鬼!  [中国翻訳]
+2025-10-29 14:41:32,069 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : maxPage: 6
+2025-10-29 14:41:32,073 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : targetList: ["https://exhentai.org/g/1733562/dec26aa06b/?p\u003d5","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d4","https://exhentai.org/g/1733562/dec26aa06b/","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d3","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d2","https://exhentai.org/g/1733562/dec26aa06b/?p\u003d1"]
+2025-10-29 14:41:32,074 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=5
+2025-10-29 14:43:48,252 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : title: https://exhentai.org/s/e0f6f28968/1733562-201
+2025-10-29 14:45:28,527 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : title: https://exhentai.org/s/bf39e37825/1733562-202
+2025-10-29 14:45:34,404 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : title: https://exhentai.org/s/c2c2c4c0c9/1733562-203
+2025-10-29 14:46:23,878 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : title: https://exhentai.org/s/fcf893b472/1733562-204
+2025-10-29 14:46:25,875 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : title: https://exhentai.org/s/eac9982821/1733562-205
+2025-10-29 14:46:27,497 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : target: https://exhentai.org/g/1733562/dec26aa06b/?p=4
+2025-10-29 14:46:33,033 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : title: https://exhentai.org/s/358c2e360b/1733562-161
+2025-10-29 14:46:39,188 INFO  [pool-1-thread-1] tw.com.kuan.clamber.GetEHThread : title: https://exhentai.org/s/3c5225d252/1733562-162

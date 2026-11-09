@@ -1,6 +1,6 @@
 package tw.com.kuan.runner;
 
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import tw.com.kuan.clamber.GetEHThread;
@@ -19,7 +19,7 @@ import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 @Component
-@Log4j2
+@Slf4j
 public class MainExecutor implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
@@ -42,7 +42,7 @@ public class MainExecutor implements CommandLineRunner {
         CompletableFuture[] jobs = new CompletableFuture[jobList.size()];
         jobList.toArray(jobs);
         CompletableFuture.allOf(jobs).whenComplete((b, r) ->{
-            log.info("Mission Completed");
+            logger.info("Mission Completed");
         }).join();
 
         delCompleteFile();
@@ -58,7 +58,7 @@ public class MainExecutor implements CommandLineRunner {
         myFile.renameTo(new File(backPath));
         myFile = new File(filePath);
         if ((myFile.createNewFile())) {
-            log.info("downloadList.txt reset Completed!");
+        logger.info("downloadList.txt reset Completed!");
         }
     }
 }

@@ -1,7 +1,55 @@
-/target/
-.setting
+# ==============================================================================
+# 忽略 Spring Boot / Maven 构建产物
+# ==============================================================================
+target/
+discovered/
+.buildInfo
+# IDE 相关文件
 .idea
-/out/
-/photo/
+.vscode
 *.iml
+.settings
+# Java 编译输出
+out/
+build/
+# 日志文件
+devfile.log
+log.txt
+logs/*.txt
+*.log
+# 图片/下载文件
+photo/*
+!photo/.git
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versions backup
+pom.xml.next to
+# OS 特定文件（Windows）
+.DS_Store
+Thumbs.db
+# 临时文件
+~$*
+*.swp
+*~
+# Gradle 构建 (如果有)
+.gradle
+# npm/node_modules
+node_modules/
+.npm
+# jar / exe
+*.jar
+*.war
+*.ear
+*.exe
+*.dll
+# IDE 索引和缓存
+.idea/workspace
+.idea/caches
+.idea/modules.xml
+.project
+.classpath
+# 配置文件 (可选，根据需求调整)
+# config.properties
+# conf/*.txt
 
