@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Properties;
 
 import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -17,8 +19,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 @Log4j2
-public  class GetEHUtil {
-	public static String[] REPLACECHAR = { "~", "\\*", "\\#", "\\%", "\\&", ":", ">", "<", "/", "\\}", "\\{", "\\|", "\\?" };
+public class GetEHUtil {
+	public static String[] REPLACECHAR = { "~", "\\*", "\\#", "\\%", "\\&", ":", ">", "<", "/", "\\}", "\\{", "\\|",
+			"\\?" };
 
 	public static Properties p = new Properties();
 	public static int fileCount = 0;
@@ -37,7 +40,6 @@ public  class GetEHUtil {
 		}
 	}
 
-
 	public void getPhotoJsoup(String target, String Path) throws IOException {
 		Connection conn = getConnection(target).timeout(10000);
 		Document doc = conn.get();
@@ -55,7 +57,7 @@ public  class GetEHUtil {
 	public synchronized ArrayList<String> getPhotoUrl(String target) throws IOException {
 		Connection conn = getConnection(target);
 		Document doc = conn.get();
-		Elements elem = doc.select("#gdt").select(".gdtm").select("a");
+		Elements elem = doc.select("#gdt").select("a");
 		ArrayList<String> result = new ArrayList<String>();
 		for (Element obj : elem) {
 			String tagetUrl = obj.attr("href");
@@ -73,9 +75,9 @@ public  class GetEHUtil {
 		System.out.println(doc.select("#gj").text());
 		if (title.length() < 1) {
 			title = doc.select("#gn").text();
-			
+
 		}
-		for(String str:REPLACECHAR) {
+		for (String str : REPLACECHAR) {
 			title = title.replaceAll(str, " ");
 		}
 		System.out.println(title);
@@ -102,13 +104,13 @@ public  class GetEHUtil {
 			// 建立連線
 			URLConn.connect();
 			// URLConn.getOutputStream().flush();
-			log.debug("URL: {}", sURL );
-			log.debug("savePath: {}", path );
+			log.debug("URL: {}", sURL);
+			log.debug("savePath: {}", path);
 			log.debug("fileName: {}", fileName);
 			// 取得下載inputstream連線
 			java.io.BufferedInputStream rd = new java.io.BufferedInputStream(URLConn.getInputStream());
 
-//			String saveFileName = fileName;
+			// String saveFileName = fileName;
 
 			java.io.File f = new java.io.File(path);
 			f = new java.io.File(f.getAbsolutePath());
@@ -118,7 +120,7 @@ public  class GetEHUtil {
 			if (f.exists()) {
 				return true;
 			}
-//			fileName = saveFileName;
+			// fileName = saveFileName;
 			// 取得路徑
 			// this.filePath = f.getAbsolutePath();
 
@@ -159,12 +161,12 @@ public  class GetEHUtil {
 		if (user != null && pass != null && !"".equalsIgnoreCase(user) && !"".equalsIgnoreCase(pass)) {
 			conn.cookie("ipb_member_id", p.getProperty("USERNUMBER"));
 			conn.cookie("ipb_pass_hash", p.getProperty("PASSWD_HASH"));
-//			conn.cookie("igneous", "afe62975f");
-//			conn.cookie("sl", "dm_1");
-//			conn.cookie("s", "c54e14dd7");
+			// conn.cookie("igneous", "afe62975f");
+			// conn.cookie("sl", "dm_1");
+			// conn.cookie("s", "c54e14dd7");
 			conn.cookie("sk", p.getProperty("SK"));
-//			conn.cookie("lv", "1552487455-1552952712");
-//			conn.cookie("hath_perks", "m1.t1.t2.t3.p1-16313ecdd6");
+			// conn.cookie("lv", "1552487455-1552952712");
+			// conn.cookie("hath_perks", "m1.t1.t2.t3.p1-16313ecdd6");
 		}
 		return conn;
 	}

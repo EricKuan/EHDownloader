@@ -5,13 +5,13 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 import com.google.gson.Gson;
+
 import lombok.extern.log4j.Log4j2;
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import org.springframework.util.StringUtils;
 import tw.com.kuan.util.GetEHUtil;
 
 @Log4j2
@@ -35,24 +35,22 @@ public class GetEHThread implements Runnable {
         }
         Path = "photo\\" + title;
         log.info("Path: {}", Path);
-        //ptt
+
         Connection conn = http.getConnection(url);
         Document doc = conn.get();
         Elements elem = doc.select(".ptt").select("tr").select("td");
         Set<String> result = new HashSet<String>();
 
-
-        Integer maxPage = elem.stream().filter(item -> Pattern.matches("\\d{1,3}", item.text())).map(Element::text).map(Integer::valueOf).max(Integer::compareTo).orElse(0);
+        Integer maxPage = elem.stream().filter(item -> Pattern.matches("\\d{1,3}", item.text())).map(Element::text)
+                .map(Integer::valueOf).max(Integer::compareTo).orElse(0);
 
         log.info("maxPage: {}", maxPage);
-//		https://exhentai.org/g/2059599/2ca850abab/?p=8
 
         result.add(url);
         for (int i = 1; i < maxPage; i++) {
             StringBuilder urlBuilder = new StringBuilder().append(url).append("?p=").append(i);
             result.add(urlBuilder.toString());
         }
-
 
         log.info("targetList: {}", new Gson().toJson(result));
 

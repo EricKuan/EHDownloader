@@ -5,7 +5,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import tw.com.kuan.clamber.GetEHThread;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,15 +14,13 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.stream.Collectors;
 
 @Component
 @Log4j2
 public class MainExecutor implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
-        ExecutorService executor  = Executors.newFixedThreadPool(5);
+        ExecutorService executor = Executors.newFixedThreadPool(5);
         FileInputStream fileInStreamObj = new FileInputStream("./conf/downliadList.txt");
         InputStream inStreamObject = fileInStreamObj;
         Scanner sc = new Scanner(inStreamObject);
@@ -41,13 +38,14 @@ public class MainExecutor implements CommandLineRunner {
 
         CompletableFuture[] jobs = new CompletableFuture[jobList.size()];
         jobList.toArray(jobs);
-        CompletableFuture.allOf(jobs).whenComplete((b, r) ->{
+        CompletableFuture.allOf(jobs).whenComplete((b, r) -> {
             log.info("Mission Completed");
         }).join();
 
         delCompleteFile();
         System.exit(0);
     }
+
     private static void delCompleteFile() throws IOException {
         String filePath = "./conf/downliadList.txt";
         File myFile = new File(filePath);
